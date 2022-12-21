@@ -1,2 +1,0 @@
-# KOSA
-Android Developers
