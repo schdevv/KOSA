@@ -1,1 +1,1 @@
-Machine Learning & Deep Learning
+AI (Machine Learning & Deep Learning)
