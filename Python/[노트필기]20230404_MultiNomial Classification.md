@@ -2,7 +2,7 @@
 
 ## 1. MultiNomial Classification
   ### 0) AI 복습
-  ![](2023-04-04-17-36-19.png)
+  <img src="./images/2023-04-04-17-36-19.png"
 
  ### 1) 문제 : 성적과 출석 점수에 따른 학점(grade) 도출 Model
   ![](2023-04-04-17-37-10.png)
