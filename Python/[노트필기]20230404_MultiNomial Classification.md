@@ -5,7 +5,7 @@
   <img src="./images/2023-04-04-17-36-19.png"
 
  ### 1) 문제 : 성적과 출석 점수에 따른 학점(grade) 도출 Model
-  ![](2023-04-04-17-37-10.png)
+  ![](./images/2023-04-04-17-37-10.png)
 
   (1) 독립변수(feature) : 성적(x1) 5행, 출석(x2) 5행
   (2) 종속변수(Taget Lable) : 학점(t) 5행(A,B,C)
@@ -97,7 +97,7 @@ model.fit(x_data_train_norm,
          verbose=1)
 ```
 
-![](2023-04-04-17-46-59.png)
+![](./images/2023-04-04-17-46-59.png)
 
 
 ```python
@@ -155,4 +155,4 @@ print(model.predict(scaled_predict_data))
 
 ```
 
-![](2023-04-04-16-24-06.png)
+![](./images/2023-04-04-16-24-06.png)
