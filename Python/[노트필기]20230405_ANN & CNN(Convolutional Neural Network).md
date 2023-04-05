@@ -36,13 +36,12 @@
 ```
   (4) 데카르트 좌표계 (표기방식: x,y)
 ```
-![](2023-04-05-09-41-42.png)
-![](2023-04-05-18-44-45.png)
+![](./images/2023-04-05-09-41-42.png)
 
 ```
   (5) Image 좌표계 (표기방식: y,x)
 ```
-![](2023-04-05-09-56-55.png)
+![](./images/2023-04-05-09-56-55.png)
 ```
   (6) 학습방법
     □  CNN (Convolutional Neural Network) : 합성곱 신경망 → Convnet(컨브넷)
@@ -50,7 +49,7 @@
 
   #### 2) CNN (Convolutional Neural Network) : 합성곱 신경망 → Convnet(컨브넷)
 
-![](2023-04-05-17-11-32.png)
+![](./images/2023-04-05-17-11-32.png)
 
 ```
   (1) Feature Extraction(특성추출) 입력이미지 데이터를 전처리 하는 과정 : input data →  [ input Layer → convoluction Layer conv[] relu함수를 사용해 값을 변동시킴. → pooling Layer (옵션값) →  ] 
@@ -59,7 +58,7 @@
   (3) 목표 : 사람이 바라보는 개념의 특징들만으로 도출하는 것에서 착안했고 이미지의 특징을 분석하는 것(특징 유추)
   ```
 
-![](2023-04-05-17-12-30.png)
+![](./images/2023-04-05-17-12-30.png)
   ```
   (4) convoluction(합성곱연산) : 이미지의 특징을 뽑아내서 학습에 좋은 이미지로 만드는 것
     □ Image Pixel Data(5x5)와 Filter(3x3)의 합성곱 연산 : 같은 위치의 원소끼리 곱한 다음, 전부 합산함.
@@ -85,7 +84,7 @@
   □ Zero Padding : 5x5를 7x7로 확장시킴 (주입값은 모두 0)
 ```
 
-![](2023-04-05-17-12-56.png)
+![](./images/2023-04-05-17-12-56.png)
 ```
   (7) MAX pooling ㅣ Image에 Filter를 거쳐서 특징을 뽑아낸 이미지 (Feature Map)
     □ kernel(2x2)(=거름망)를 Stride(2)(=이동경로 2칸 움직임.)
@@ -125,7 +124,7 @@ plt.imshow(color_pixel)
 plt.show()
 print(color_pixel.shape)
 ```
-![](2023-04-05-17-36-21.png)
+![](./images/2023-04-05-17-36-21.png)
 
 ```python
 # 위의 그림을 흑백으로 변경
@@ -155,7 +154,7 @@ print(gray_2d_pixel.shape)
 plt.imshow(gray_2d_pixel, cmap='gray')
 plt.show()
 ```
-![](2023-04-05-17-36-58.png)
+![](./images/2023-04-05-17-36-58.png)
 
 ##### (2) CNN실습 : Feature Extraction(특성추출)
 ```python
@@ -212,7 +211,7 @@ fig.tight_layout()
 plt.show()
 
 ```
-![](2023-04-05-17-40-18.png)
+![](./images/2023-04-05-17-40-18.png)
 
 ```python
 # 이번에는 방금 곰소녀 이미지를 이용해 pooling 처리까지 수행해보기
@@ -284,7 +283,7 @@ ax3.imshow(t_img)
 fig.tight_layout()
 plt.show()
 ```
-![](2023-04-05-17-40-44.png)
+![](./images/2023-04-05-17-40-44.png)
 
 ##### (3) MNINST 기법별 비교 구현(3가지)
 ```python
@@ -343,14 +342,14 @@ model_1.fit(x_data_train_norm,
             batch_size=100,
             callbacks=[early_stopping])
 ```
-![](2023-04-05-17-44-36.png)
+![](./images/2023-04-05-17-44-36.png)
 
 ```python
 # 첫번째 Model => Multinomial Classification(머신러닝)
 # 평가는? 0.9229364991188049
 print(model_1.evaluate(x_data_test_norm, t_data_test))
 ```
-![](2023-04-05-17-45-20.png)
+![](./images/2023-04-05-17-45-20.png)
 ##### (3-2) NIST를 DNN으로 구현해 정확도를 판단
 ```python
 # 두번째 Model => DNN (딥러닝)
@@ -383,14 +382,14 @@ model_2.fit(x_data_train_norm,
             batch_size=100,
             callbacks=[early_stopping])
 ```
-![](2023-04-05-17-45-58.png)
+![](./images/2023-04-05-17-45-58.png)
 ```python
 # 두번째 Model => DNN(딥러닝)
 # 평가는?  첫번째 : 0.9229364991188049
 #          두번째 : 0.9603968262672424
 print(model_2.evaluate(x_data_test_norm, t_data_test))
 ```
-![](2023-04-05-17-46-19.png)
+![](./images/2023-04-05-17-46-19.png)
 
 ##### (3-3) MNIST를 CNN으로 구현해 정확도를 판단(Vision의 시작점)
 ```python
@@ -448,7 +447,7 @@ model_3.fit(x_data_train_norm.reshape(-1,28,28,1),
             batch_size=100,
             callbacks=[early_stopping])
 ```
-![](2023-04-05-17-46-46.png)
+![](./images/2023-04-05-17-46-46.png)
 ```python
 # 세번째 Model => CNN(딥러닝)
 # 평가는?  첫번째 : 0.9229364991188049
@@ -456,4 +455,4 @@ model_3.fit(x_data_train_norm.reshape(-1,28,28,1),
 #          세번째 : 0.9821428656578064
 print(model_3.evaluate(x_data_test_norm.reshape(-1,28,28,1), t_data_test))
 ```
-![](2023-04-05-17-47-04.png)
+![](./images/2023-04-05-17-47-04.png)
