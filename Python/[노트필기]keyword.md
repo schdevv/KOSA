@@ -79,3 +79,15 @@
 |7|activation=||
 |8|||
 
+#### 0. Trnasfer Learning
+
+|구분|속성(함수)명|설명|
+|---|---|---|
+|1|include_top=False||
+|2|input_shape=()|input Image data의 형태를 지정해줌|
+|3|initializer||
+|4|units=||
+|5|rate=||
+|6|summary()||
+|7|activation=||
+|8|||
